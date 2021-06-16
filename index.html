@@ -159,8 +159,8 @@
 <span class="co">#&gt; 4          17240 9811b753-347c-467a-b3cb-~ Saquon Barkley      RB    NYG       4</span>
 <span class="co">#&gt; 5          17246 4bd60b33-9fbf-4156-ba2b-~ Nick Chubb          RB    CLE       5</span>
 <span class="co">#&gt; # ... with 490 more rows, and 21 more variables: ecr &lt;chr&gt;, sd &lt;chr&gt;,</span>
-<span class="co">#&gt; #   min &lt;chr&gt;, max &lt;chr&gt;, yahoo_id &lt;chr&gt;, cbs_id &lt;chr&gt;, player_positions &lt;chr&gt;,</span>
-<span class="co">#&gt; #   player_short_name &lt;chr&gt;, player_eligibility &lt;chr&gt;,</span>
+<span class="co">#&gt; #   best &lt;chr&gt;, worst &lt;chr&gt;, yahoo_id &lt;chr&gt;, cbs_id &lt;chr&gt;,</span>
+<span class="co">#&gt; #   player_positions &lt;chr&gt;, player_short_name &lt;chr&gt;, player_eligibility &lt;chr&gt;,</span>
 <span class="co">#&gt; #   player_yahoo_positions &lt;chr&gt;, player_page_url &lt;chr&gt;, player_filename &lt;chr&gt;,</span>
 <span class="co">#&gt; #   player_square_image_url &lt;chr&gt;, player_image_url &lt;chr&gt;,</span>
 <span class="co">#&gt; #   player_bye_week &lt;chr&gt;, player_owned_avg &lt;dbl&gt;, player_owned_espn &lt;dbl&gt;,</span>
@@ -169,7 +169,15 @@
 
 <span class="fu"><a href="reference/fp_rankings.html">fp_rankings</a></span><span class="op">(</span>page <span class="op">=</span> <span class="st">"ros-overall"</span>, sport <span class="op">=</span> <span class="st">"nhl"</span><span class="op">)</span>
 <span class="co">#&gt; No encoding supplied: defaulting to UTF-8.</span>
-<span class="co">#&gt; NULL</span></code></pre></div>
+<span class="co">#&gt; # A tibble: 420 x 8</span>
+<span class="co">#&gt;   player_name     player_id team  pos     ecr    sd  best worst</span>
+<span class="co">#&gt;   &lt;chr&gt;           &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;int&gt;</span>
+<span class="co">#&gt; 1 Connor McDavid  16664     EDM   C,F     1.5   0.5     1     2</span>
+<span class="co">#&gt; 2 Auston Matthews 17201     TOR   C,F     2.5   1.5     1     4</span>
+<span class="co">#&gt; 3 Mitchell Marner 16669     TOR   RW,F    8.5   5.5     3    14</span>
+<span class="co">#&gt; 4 Leon Draisaitl  16588     EDM   C,LW   10     7       3    17</span>
+<span class="co">#&gt; 5 Patrick Kane    15373     CHI   RW,F   12     1      11    13</span>
+<span class="co">#&gt; # ... with 415 more rows</span></code></pre></div>
 </div>
 <div id="default-options" class="section level2">
 <h2 class="hasAnchor">
@@ -248,6 +256,7 @@
 <li><a href="https://ffpros.dynastyprocess.com/"><img src="https://img.shields.io/github/r-package/v/dynastyprocess/ffpros/main?label=dev%20version&amp;style=flat-square&amp;logo=github" alt="Dev status"></a></li>
 <li><a href="https://lifecycle.r-lib.org/articles/stages.html"><img src="https://img.shields.io/badge/lifecycle-experimental-orange.svg?style=flat-square" alt="Lifecycle: experimental"></a></li>
 <li><a href="https://github.com/DynastyProcess/ffpros/actions"><img src="https://img.shields.io/github/workflow/status/dynastyprocess/ffpros/R-CMD-check?label=R%20check&amp;style=flat-square&amp;logo=github" alt="R build status"></a></li>
+<li><a href="https://github.com/DynastyProcess/ffpros/actions"><img src="https://img.shields.io/github/workflow/status/dynastyprocess/ffpros/TestLiveSite?label=Live%20check&amp;style=flat-square&amp;logo=github" alt="Live test status"></a></li>
 <li><a href="https://codecov.io/gh/DynastyProcess/ffpros?branch=main"><img src="https://img.shields.io/codecov/c/github/dynastyprocess/ffpros?label=codecov&amp;style=flat-square&amp;logo=codecov" alt="Codecov test coverage"></a></li>
 <li><a href="https://discord.com/invite/5Er2FBnnQa"><img src="https://img.shields.io/discord/591914197219016707.svg?color=5865F2&amp;label=nflverse%20discord&amp;logo=discord&amp;logoColor=5865F2&amp;style=flat-square" alt="nflverse discord"></a></li>
 </ul>
