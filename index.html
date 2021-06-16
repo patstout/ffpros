@@ -149,18 +149,17 @@
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ffpros.dynastyprocess.com">ffpros</a></span><span class="op">)</span>
 
 <span class="fu"><a href="reference/fp_rankings.html">fp_rankings</a></span><span class="op">(</span>page <span class="op">=</span> <span class="st">"consensus-cheatsheets"</span><span class="op">)</span> <span class="co"># defaults to nfl!</span>
-<span class="co">#&gt; No encoding supplied: defaulting to UTF-8.</span>
 <span class="co">#&gt; # A tibble: 495 x 27</span>
-<span class="co">#&gt;   fantasypros_id sportradar_id             player_name         pos   team   rank</span>
-<span class="co">#&gt;            &lt;int&gt; &lt;chr&gt;                     &lt;chr&gt;               &lt;chr&gt; &lt;chr&gt; &lt;int&gt;</span>
-<span class="co">#&gt; 1          16393 f96db0af-5e25-42d1-a07a-~ Christian McCaffrey RB    CAR       1</span>
-<span class="co">#&gt; 2          16374 8960d61e-433b-41ea-a7ad-~ Dalvin Cook         RB    MIN       2</span>
-<span class="co">#&gt; 3          15514 87c481c7-7414-43cc-82df-~ Derrick Henry       RB    TEN       3</span>
-<span class="co">#&gt; 4          17240 9811b753-347c-467a-b3cb-~ Saquon Barkley      RB    NYG       4</span>
-<span class="co">#&gt; 5          17246 4bd60b33-9fbf-4156-ba2b-~ Nick Chubb          RB    CLE       5</span>
-<span class="co">#&gt; # ... with 490 more rows, and 21 more variables: ecr &lt;chr&gt;, sd &lt;chr&gt;,</span>
-<span class="co">#&gt; #   best &lt;chr&gt;, worst &lt;chr&gt;, yahoo_id &lt;chr&gt;, cbs_id &lt;chr&gt;,</span>
-<span class="co">#&gt; #   player_positions &lt;chr&gt;, player_short_name &lt;chr&gt;, player_eligibility &lt;chr&gt;,</span>
+<span class="co">#&gt;   fantasypros_id player_name         pos   team   rank   ecr    sd  best worst</span>
+<span class="co">#&gt;            &lt;int&gt; &lt;chr&gt;               &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span>
+<span class="co">#&gt; 1          16393 Christian McCaffrey RB    CAR       1  1.2   0.72     1     6</span>
+<span class="co">#&gt; 2          16374 Dalvin Cook         RB    MIN       2  2.2   0.57     1     4</span>
+<span class="co">#&gt; 3          15514 Derrick Henry       RB    TEN       3  2.99  0.63     1     7</span>
+<span class="co">#&gt; 4          17240 Saquon Barkley      RB    NYG       4  5.35  2.24     2    22</span>
+<span class="co">#&gt; 5          17246 Nick Chubb          RB    CLE       5  6.35  2.33     3    20</span>
+<span class="co">#&gt; # ... with 490 more rows, and 18 more variables: sportradar_id &lt;chr&gt;,</span>
+<span class="co">#&gt; #   yahoo_id &lt;chr&gt;, cbs_id &lt;chr&gt;, player_positions &lt;chr&gt;,</span>
+<span class="co">#&gt; #   player_short_name &lt;chr&gt;, player_eligibility &lt;chr&gt;,</span>
 <span class="co">#&gt; #   player_yahoo_positions &lt;chr&gt;, player_page_url &lt;chr&gt;, player_filename &lt;chr&gt;,</span>
 <span class="co">#&gt; #   player_square_image_url &lt;chr&gt;, player_image_url &lt;chr&gt;,</span>
 <span class="co">#&gt; #   player_bye_week &lt;chr&gt;, player_owned_avg &lt;dbl&gt;, player_owned_espn &lt;dbl&gt;,</span>
@@ -168,15 +167,14 @@
 <span class="co">#&gt; #   tier &lt;int&gt;</span>
 
 <span class="fu"><a href="reference/fp_rankings.html">fp_rankings</a></span><span class="op">(</span>page <span class="op">=</span> <span class="st">"ros-overall"</span>, sport <span class="op">=</span> <span class="st">"nhl"</span><span class="op">)</span>
-<span class="co">#&gt; No encoding supplied: defaulting to UTF-8.</span>
-<span class="co">#&gt; # A tibble: 420 x 8</span>
-<span class="co">#&gt;   player_name     player_id team  pos     ecr    sd  best worst</span>
-<span class="co">#&gt;   &lt;chr&gt;           &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;int&gt;</span>
-<span class="co">#&gt; 1 Connor McDavid  16664     EDM   C,F     1.5   0.5     1     2</span>
-<span class="co">#&gt; 2 Auston Matthews 17201     TOR   C,F     2.5   1.5     1     4</span>
-<span class="co">#&gt; 3 Mitchell Marner 16669     TOR   RW,F    8.5   5.5     3    14</span>
-<span class="co">#&gt; 4 Leon Draisaitl  16588     EDM   C,LW   10     7       3    17</span>
-<span class="co">#&gt; 5 Patrick Kane    15373     CHI   RW,F   12     1      11    13</span>
+<span class="co">#&gt; # A tibble: 420 x 9</span>
+<span class="co">#&gt;   fantasypros_id player_name     team  pos    rank   ecr    sd  best worst</span>
+<span class="co">#&gt;   &lt;chr&gt;          &lt;chr&gt;           &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span>
+<span class="co">#&gt; 1 16664          Connor McDavid  EDM   C,F       1   1.5   0.5     1     2</span>
+<span class="co">#&gt; 2 17201          Auston Matthews TOR   C,F       2   2.5   1.5     1     4</span>
+<span class="co">#&gt; 3 16669          Mitchell Marner TOR   RW,F      3   8.5   5.5     3    14</span>
+<span class="co">#&gt; 4 16588          Leon Draisaitl  EDM   C,LW      4  10     7       3    17</span>
+<span class="co">#&gt; 5 15373          Patrick Kane    CHI   RW,F      5  12     1      11    13</span>
 <span class="co">#&gt; # ... with 415 more rows</span></code></pre></div>
 </div>
 <div id="default-options" class="section level2">
