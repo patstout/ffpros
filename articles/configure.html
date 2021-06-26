@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Configure • ffpros</title>
+<title>Configuration Options • ffpros</title>
 <!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
 <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png">
@@ -18,7 +18,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
 <script src="../pkgdown.js"></script><link href="../extra.css" rel="stylesheet">
-<meta property="og:title" content="Configure">
+<meta property="og:title" content="Configuration Options">
 <meta property="og:description" content="ffpros">
 <meta property="og:image" content="ffpros.dynastyprocess.com/reference/figures/logo.svg">
 <meta property="og:image:alt" content="ffpros - An R Package For FantasyPros.com">
@@ -66,7 +66,7 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
-      <a href="../articles/configure.html">Configure</a>
+      <a href="../articles/configure.html">Configuration Options</a>
     </li>
   </ul>
 </li>
@@ -131,10 +131,10 @@
       </header><script src="configure_files/accessible-code-block-0.0.1/empty-anchor.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
-      <h1 data-toc-skip>Configure</h1>
+      <h1 data-toc-skip>Configuration Options</h1>
                         <h4 class="author">Tan Ho</h4>
             
-            <h4 class="date">2021-06-17</h4>
+            <h4 class="date">2021-06-26</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/dynastyprocess/ffpros/blob/master/vignettes/configure.Rmd"><code>vignettes/configure.Rmd</code></a></small>
       <div class="hidden name"><code>configure.Rmd</code></div>
@@ -144,12 +144,81 @@
     
     
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># library(ffpros)</span></code></pre></div>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ffpros.dynastyprocess.com">ffpros</a></span><span class="op">)</span></code></pre></div>
+<p>The ffpros package has several configuration options, most of which control default behaviours for functions.</p>
+<div id="caching" class="section level2">
+<h2 class="hasAnchor">
+<a href="#caching" class="anchor"></a>Caching</h2>
+<p>This option controls caching of requests, and is the only option that needs to be set <strong><em>before</em></strong> the package is loaded.</p>
+<p>The available options are <code>"memory"</code> (default), <code>"filesystem"</code> (persistent between R sessions), and <code>"off"</code>.</p>
+<p>Pages are stored for one (1) hour.</p>
+<p>Basic example:</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/options.html">options</a></span><span class="op">(</span>ffpros.cache <span class="op">=</span> <span class="st">"memory"</span><span class="op">)</span> 
+<span class="fu"><a href="https://rdrr.io/r/base/options.html">options</a></span><span class="op">(</span>ffpros.cache <span class="op">=</span> <span class="st">"filesystem"</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/base/options.html">options</a></span><span class="op">(</span>ffpros.cache <span class="op">=</span> <span class="st">"off"</span><span class="op">)</span>
+
+<span class="co">## THEN ##</span>
+
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ffpros.dynastyprocess.com">ffpros</a></span><span class="op">)</span> <span class="co">## OR</span>
+<span class="fu">ffpros</span><span class="fu">::</span><span class="fu"><a href="../reference/fp_rankings.html">fp_rankings</a></span><span class="op">(</span><span class="st">"consensus-cheatsheets"</span><span class="op">)</span></code></pre></div>
+<p>You can use <code>usethis::edit_r_profile()</code> to include this option in your R profile, which will automatically load before the ffpros package in future sessions.</p>
+</div>
+<div id="ratelimiting" class="section level2">
+<h2 class="hasAnchor">
+<a href="#ratelimiting" class="anchor"></a>Ratelimiting</h2>
+<p>This package respects the crawl delay set out in the <a href="https://www.fantasypros.com/robots.txt">robots.txt</a> which asks for five seconds per request. To change this configuration, you can use the <code><a href="../reference/fp_set_ratelimit.html">fp_set_ratelimit()</a></code> function:</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R">
+<span class="fu"><a href="../reference/fp_set_ratelimit.html">fp_set_ratelimit</a></span><span class="op">(</span>
+  rate_number <span class="op">=</span> <span class="fl">2</span>, <span class="co"># two requests every...</span>
+  rate_seconds <span class="op">=</span> <span class="fl">2</span> <span class="co"># two seconds</span>
+  <span class="op">)</span> 
+
+<span class="fu"><a href="../reference/fp_set_ratelimit.html">fp_set_ratelimit</a></span><span class="op">(</span>
+  rate_limit <span class="op">=</span> <span class="cn">FALSE</span> <span class="co"># turns off ratelimiting</span>
+<span class="op">)</span></code></pre></div>
+</div>
+<div id="sport" class="section level2">
+<h2 class="hasAnchor">
+<a href="#sport" class="anchor"></a>Sport</h2>
+<p>The default sport for all ffpros functions is NFL. To change this, you can set the ffpros.sport option, which needs to be one of <code>"nfl"</code>, <code>"nba"</code>, <code>"nhl"</code>, or <code>"mlb"</code>:</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/options.html">options</a></span><span class="op">(</span>ffpros.sport <span class="op">=</span> <span class="st">"nhl"</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/base/options.html">options</a></span><span class="op">(</span>ffpros.sport <span class="op">=</span> <span class="st">"nba"</span><span class="op">)</span></code></pre></div>
+<p>You can also use the <code><a href="../reference/fp_set_sport.html">fp_set_sport()</a></code> function to accomplish the same thing:</p>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/fp_set_sport.html">fp_set_sport</a></span><span class="op">(</span><span class="st">"nhl"</span><span class="op">)</span>
+<span class="fu"><a href="../reference/fp_set_sport.html">fp_set_sport</a></span><span class="op">(</span><span class="st">"mlb"</span><span class="op">)</span></code></pre></div>
+<p>You <strong><em>should not</em></strong> set this option in your rprofile, since it materially changes how ffpros operates - functions will start returning different output by default. Instead, always set it at the top of any required script.</p>
+</div>
+<div id="metadata" class="section level2">
+<h2 class="hasAnchor">
+<a href="#metadata" class="anchor"></a>Metadata</h2>
+<p>By default, ffpros functions return only the cleaned data, but it can be configured to return the page HTML as well as any additional metadata, in case you want to parse the page on your own.</p>
+<p>This can be set with either of the following two methods:</p>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/options.html">options</a></span><span class="op">(</span>ffpros.include_metadata <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
+<span class="co">## OR ##</span>
+<span class="fu"><a href="../reference/fp_set_metadata.html">fp_set_metadata</a></span><span class="op">(</span>include <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
+<p>This function, as with the sport option, changes how ffpros functions behave in a material way - so you <strong><em>should not</em></strong> set this option in your rprofile. Instead, always set it at the top of any required script.</p>
+</div>
+<div id="user-agent" class="section level2">
+<h2 class="hasAnchor">
+<a href="#user-agent" class="anchor"></a>User Agent</h2>
+<p>ffpros will default to identifying itself to FantasyPros.com as <code>"ffpros R client package https://github.com/dynastyprocess/ffpros"</code>. If you would like to pass a different user agent, you can configure this with either of the following two methods:</p>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/fp_set_useragent.html">fp_set_useragent</a></span><span class="op">(</span><span class="st">"my_user_agent"</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/base/options.html">options</a></span><span class="op">(</span>ffpros.user_agent <span class="op">=</span> <span class="st">"my_user_agent"</span><span class="op">)</span></code></pre></div>
+<p>There’s no significant difference between either of these methods and you can set it in your rprofile if you wish.</p>
+</div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
 
-      </div>
+        <nav id="toc" data-toggle="toc"><h2 data-toc-skip>Contents</h2>
+    </nav>
+</div>
 
 </div>
 
