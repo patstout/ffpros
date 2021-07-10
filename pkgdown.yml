@@ -4,8 +4,8 @@ pkgdown_sha: ~
 articles:
   configure: configure.html
   ffpros: ffpros.html
-last_built: 2021-07-08T19:30Z
+last_built: 2021-07-10T19:23Z
 urls:
-  reference: ffpros.dynastyprocess.com/reference
-  article: ffpros.dynastyprocess.com/articles
+  reference: ffpros.ffverse.com/reference
+  article: ffpros.ffverse.com/articles
 

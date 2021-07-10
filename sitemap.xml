@@ -1,54 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>ffpros.dynastyprocess.com/index.html</loc>
+    <loc>ffpros.ffverse.com/index.html</loc>
   </url>
   <url>
-    <loc>ffpros.dynastyprocess.com/reference/dot-fp_extract_ecrjs.html</loc>
+    <loc>ffpros.ffverse.com/reference/dot-fp_extract_ecrjs.html</loc>
   </url>
   <url>
-    <loc>ffpros.dynastyprocess.com/reference/dot-fp_get.html</loc>
+    <loc>ffpros.ffverse.com/reference/dot-fp_get.html</loc>
   </url>
   <url>
-    <loc>ffpros.dynastyprocess.com/reference/dot-fp_string_to_json.html</loc>
+    <loc>ffpros.ffverse.com/reference/dot-fp_string_to_json.html</loc>
   </url>
   <url>
-    <loc>ffpros.dynastyprocess.com/reference/dot-retry_get.html</loc>
+    <loc>ffpros.ffverse.com/reference/dot-retry_get.html</loc>
   </url>
   <url>
-    <loc>ffpros.dynastyprocess.com/reference/ffpros-package.html</loc>
+    <loc>ffpros.ffverse.com/reference/ffpros-package.html</loc>
   </url>
   <url>
-    <loc>ffpros.dynastyprocess.com/reference/fp_projections.html</loc>
+    <loc>ffpros.ffverse.com/reference/fp_projections.html</loc>
   </url>
   <url>
-    <loc>ffpros.dynastyprocess.com/reference/fp_projections_parse.html</loc>
+    <loc>ffpros.ffverse.com/reference/fp_projections_parse.html</loc>
   </url>
   <url>
-    <loc>ffpros.dynastyprocess.com/reference/fp_rankings.html</loc>
+    <loc>ffpros.ffverse.com/reference/fp_rankings.html</loc>
   </url>
   <url>
-    <loc>ffpros.dynastyprocess.com/reference/fp_rankings_parse.html</loc>
+    <loc>ffpros.ffverse.com/reference/fp_rankings_parse.html</loc>
   </url>
   <url>
-    <loc>ffpros.dynastyprocess.com/reference/fp_set_metadata.html</loc>
+    <loc>ffpros.ffverse.com/reference/fp_set_metadata.html</loc>
   </url>
   <url>
-    <loc>ffpros.dynastyprocess.com/reference/fp_set_ratelimit.html</loc>
+    <loc>ffpros.ffverse.com/reference/fp_set_ratelimit.html</loc>
   </url>
   <url>
-    <loc>ffpros.dynastyprocess.com/reference/fp_set_sport.html</loc>
+    <loc>ffpros.ffverse.com/reference/fp_set_sport.html</loc>
   </url>
   <url>
-    <loc>ffpros.dynastyprocess.com/reference/fp_set_useragent.html</loc>
+    <loc>ffpros.ffverse.com/reference/fp_set_useragent.html</loc>
   </url>
   <url>
-    <loc>ffpros.dynastyprocess.com/reference/pipe.html</loc>
+    <loc>ffpros.ffverse.com/reference/pipe.html</loc>
   </url>
   <url>
-    <loc>ffpros.dynastyprocess.com/articles/configure.html</loc>
+    <loc>ffpros.ffverse.com/articles/configure.html</loc>
   </url>
   <url>
-    <loc>ffpros.dynastyprocess.com/articles/ffpros.html</loc>
+    <loc>ffpros.ffverse.com/articles/ffpros.html</loc>
   </url>
 </urlset>
