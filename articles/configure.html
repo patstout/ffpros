@@ -136,7 +136,7 @@
       <h1 data-toc-skip>Configuration Options</h1>
                         <h4 class="author">Tan Ho</h4>
             
-            <h4 class="date">2021-09-09</h4>
+            <h4 class="date">2021-10-28</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/dynastyprocess/ffpros/blob/master/vignettes/configure.Rmd"><code>vignettes/configure.Rmd</code></a></small>
       <div class="hidden name"><code>configure.Rmd</code></div>
@@ -171,7 +171,8 @@
 <a href="#ratelimiting" class="anchor"></a>Ratelimiting</h2>
 <p>This package respects the crawl delay set out in the <a href="https://www.fantasypros.com/robots.txt">robots.txt</a> which asks for five seconds per request. To change this configuration, you can use the <code><a href="../reference/fp_set_ratelimit.html">fp_set_ratelimit()</a></code> function:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/fp_set_ratelimit.html">fp_set_ratelimit</a></span><span class="op">(</span>
+<code class="sourceCode R">
+<span class="fu"><a href="../reference/fp_set_ratelimit.html">fp_set_ratelimit</a></span><span class="op">(</span>
   rate_number <span class="op">=</span> <span class="fl">2</span>, <span class="co"># two requests every...</span>
   rate_seconds <span class="op">=</span> <span class="fl">2</span> <span class="co"># two seconds</span>
   <span class="op">)</span> 
